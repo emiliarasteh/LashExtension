@@ -67,7 +67,7 @@
 
 
     <!-- <div class="page-inner"> -->
-    <nav class="gtco-nav" role="navigation">
+    <nav class="gtco-nav" role="navigation" style="background-color: #0b0b0b">
         <div class="gtco-container">
 
             <div class="row">
@@ -94,9 +94,19 @@
         </div>
     </nav>
 
-    @yield('content')
 
-    <footer id="gtco-footer" role="contentinfo" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
+@yield('home_header')
+
+
+    <div class="gtco-section">
+        <div class="gtco-container">
+            @yield('content')
+        </div>
+    </div>
+
+    @yield('home_footer')
+
+    <footer id="gtco-footer" role="contentinfo" style="background-image: url(/assets/mytemplate/images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="gtco-container">
             <div class="row row-pb-md">
