@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 Route::get('/index', [\App\Http\Controllers\PageController::class, 'index']);
 Route::get('/about', [\App\Http\Controllers\PageController::class, 'about']);
+
+Route::get('/admin', [\App\Http\Controllers\AdminHomeController::class, 'index']);
+

@@ -1,5 +1,31 @@
 @extends('layouts.master')
+@section('css')
+    <style>
+        option{
+            background-color: #0b0b0b;
+        }
 
+        .home-footer-image{
+            background-image: url("https://assets.teenvogue.com/photos/5a84c2f6adfa794183b57486/16:9/w_2560%2Cc_limit/GettyImages-910289440.jpg") !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+
+        .custom-color{
+            color: #F263AB !important;
+
+        }
+        .custom-bg-color{
+            background-color: #F263AB !important;
+
+        }
+
+        .custom-border{
+            border-top-color: #F263AB;
+
+        }
+    </style>
+@endsection
 
 @section('home_header')
     @include('partials.home_header')
@@ -8,12 +34,11 @@
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center gtco-heading">
-            <h2 class="cursive-font primary-color">Popular Dishes</h2>
-            <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+            <h2 class="cursive-font custom-color">My Popular Works</h2>
         </div>
     </div>
     <div class="row">
-
+        @foreach($makeup as $item)
         <div class="col-lg-4 col-md-4 col-sm-6">
             <a href="/assets/mytemplate/images/img_1.jpg" class="fh5co-card-item image-popup">
                 <figure>
@@ -21,82 +46,13 @@
                     <img src="/assets/mytemplate/images/img_1.jpg" alt="Image" class="img-responsive">
                 </figure>
                 <div class="fh5co-text">
-                    <h2>Fresh Mushrooms</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-                    <p><span class="price cursive-font">$19.15</span></p>
+                    <h2 class="custom-color" >{{$item->title}}</h2>
+                    <p>{{$item->description}}</p>
+{{--                    <p><span class="price cursive-font">$19.15</span></p>--}}
                 </div>
             </a>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <a href="/assets/mytemplate/images/img_2.jpg" class="fh5co-card-item image-popup">
-                <figure>
-                    <div class="overlay"><i class="ti-plus"></i></div>
-                    <img src="/assets/mytemplate/images/img_2.jpg" alt="Image" class="img-responsive">
-                </figure>
-                <div class="fh5co-text">
-                    <h2>Cheese and Garlic Toast</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-                    <p><span class="price cursive-font">$20.99</span></p>
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <a href="/assets/mytemplate/images/img_3.jpg" class="fh5co-card-item image-popup">
-                <figure>
-                    <div class="overlay"><i class="ti-plus"></i></div>
-                    <img src="/assets/mytemplate/images/img_3.jpg" alt="Image" class="img-responsive">
-                </figure>
-                <div class="fh5co-text">
-                    <h2>Grilled Chiken Salad</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-                    <p><span class="price cursive-font">$8.99</span></p>
-
-                </div>
-            </a>
-        </div>
-
-
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <a href="/assets/mytemplate/images/img_4.jpg" class="fh5co-card-item image-popup">
-                <figure>
-                    <div class="overlay"><i class="ti-plus"></i></div>
-                    <img src="/assets/mytemplate/images/img_4.jpg" alt="Image" class="img-responsive">
-                </figure>
-                <div class="fh5co-text">
-                    <h2>Organic Egg</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-                    <p><span class="price cursive-font">$12.99</span></p>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <a href="/assets/mytemplate/images/img_5.jpg" class="fh5co-card-item image-popup">
-                <figure>
-                    <div class="overlay"><i class="ti-plus"></i></div>
-                    <img src="/assets/mytemplate/images/img_5.jpg" alt="Image" class="img-responsive">
-                </figure>
-                <div class="fh5co-text">
-                    <h2>Tomato Soup with Chicken</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-                    <p><span class="price cursive-font">$23.10</span></p>
-                </div>
-            </a>
-        </div>
-
-        <div class="col-lg-4 col-md-4 col-sm-6">
-            <a href="/assets/mytemplate/images/img_6.jpg" class="fh5co-card-item image-popup">
-                <figure>
-                    <div class="overlay"><i class="ti-plus"></i></div>
-                    <img src="/assets/mytemplate/images/img_6.jpg" alt="Image" class="img-responsive">
-                </figure>
-                <div class="fh5co-text">
-                    <h2>Salad with Crispy Chicken</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia..</p>
-                    <p><span class="price cursive-font">$5.59</span></p>
-                </div>
-            </a>
-        </div>
+        @endforeach
 
     </div>
 @endsection

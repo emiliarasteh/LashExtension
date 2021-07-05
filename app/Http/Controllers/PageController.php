@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Makeup;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        return view ('pages.index');
+        $makeup = Makeup::take(6)->get();
+        return view ('pages.index', compact('makeup'));
     }
 
     public function about()

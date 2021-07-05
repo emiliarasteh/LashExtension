@@ -28,6 +28,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="/assets/mytemplate/css/animate.css">
@@ -57,7 +58,7 @@
     <!--[if lt IE 9]>
     <script src="/assets/mytemplate/js/respond.min.js"></script>
     <![endif]-->
-
+@yield('css')
 </head>
 <body>
 
@@ -72,17 +73,19 @@
 
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
-                    <div id="gtco-logo"><a href="index.html">Savory <em>.</em></a></div>
+                    <div id="gtco-logo"><a href="index.html">Lash Extension <em>.</em></a></div>
                 </div>
                 <div class="col-xs-8 text-right menu-1">
                     <ul>
-                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="menu.html">About Me</a></li>
+                        <li><a href="menu.html">Gallery</a></li>
                         <li class="has-dropdown">
                             <a href="services.html">Services</a>
                             <ul class="dropdown">
-                                <li><a href="#">Food Catering</a></li>
-                                <li><a href="#">Wedding Celebration</a></li>
-                                <li><a href="#">Birthday's Celebration</a></li>
+                                <li><a href="#">Classic</a></li>
+                                <li><a href="#">Hybrid</a></li>
+                                <li><a href="#">Volume</a></li>
+                                <li><a href="#">Mega volume</a></li>
                             </ul>
                         </li>
                         <li><a href="contact.html">Contact</a></li>
@@ -179,7 +182,7 @@
 
 <!-- Main -->
 <script src="/assets/mytemplate/js/main.js"></script>
-
+@yield('js')
 </body>
 </html>
 
